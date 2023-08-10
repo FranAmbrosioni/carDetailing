@@ -9,7 +9,11 @@ const uri = 'mongodb://localhost:27017/myapp'
 useCreateIndex:valga la redudancia, crea automaticamente indices
 
 */
-const options = {useNewParse:true,userCreateIndex:true};
+const options = {
+  useNewUrlParser:true,
+  useUnifiedTopology: true,
+  
+};
 
 
 //los esquemas nos srive para estandarizar nuestro documento
@@ -20,7 +24,7 @@ const connectToDatabase = async () =>{
   try {
     
     await mongoose.connect(uri,options);
-    console,log('Conectado a Base de datos, y esta tu hermana')
+    console.log('Conectado a Base de datos, y esta tu hermana')
   } catch (error) {
     console.error('Error al conectar: ',error);
   }
@@ -41,7 +45,7 @@ mongoose.connection.on('disconnected', () =>{
 
 //errores en la conexion
 mongoose.connection.on('error',(err) =>{
-console.log('Dios Inutil dio error: ',err );
+console.log('Inutil dio error: ',err );
 });
 
 export default connectToDatabase;
