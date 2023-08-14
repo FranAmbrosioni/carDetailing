@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 
 //cadena de conexion 
-const uri = 'mongodb://localhost:27017/myapp'
+//ojo antes con //localhost:27017 no conectaba 
+const uri = 'mongodb://127.0.0.1:27017/myapp'
 
 /*usenewparse:habilita cadena de conexion del analizador de url
 

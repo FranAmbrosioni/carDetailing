@@ -5,6 +5,7 @@ import path from 'path';
 
 //conexion a base de datos 
 //import mongoose from './db/db.js'; //ruta al archivo
+//para poder conectarme a base de datos, creo por fuera 
 import connectToDatabase from './db/db.js';
 
 
@@ -16,6 +17,8 @@ app.use(morgan('tiny'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/api',require('./routes/cita.js'));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
